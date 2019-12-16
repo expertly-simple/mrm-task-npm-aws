@@ -1,0 +1,28 @@
+{
+  "name": "mrm-task-npm-aws",
+  "version": "1.0.0",
+  "description": "MRM task to configure your npm projects with scripts to accomplish blue-green deployments on AWS ECS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expertly-simple/mrm-task-npm-aws.git"
+  },
+  "keywords": [
+    "mrm",
+    "mrm-task",
+    "angular",
+    "vscode"
+  ],
+  "author": "Doguhan Uluca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/expertly-simple/mrm-task-npm-aws/issues"
+  },
+  "homepage": "https://github.com/expertly-simple/mrm-task-npm-aws#readme",
+  "dependencies": {
+    "mrm-core": "^4.0.0"
+  }
+}
