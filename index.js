@@ -24,7 +24,7 @@ const scripts = [
   ["aws:login:win", "cross-conf-env aws ecr get-login --no-include-email --region $npm_package_config_awsRegion > dockerLogin.cmd && call dockerLogin.cmd && del dockerLogin.cmd"],
   ["aws:login:mac", "eval $(aws ecr get-login --no-include-email --region $npm_package_config_awsRegion)"],
   ["aws:login", "run-p -cs aws:login:win aws:login:mac"],
-  ["aws:deploy", "cross-conf-env docker run --env-file ./.env duluca/ecs-deploy-fargate -c $npm_package_config_awsEcsCluster -n $npm_package_config_awsService -i $npm_package_config_imageRepo:latest -r $npm_package_config_awsRegion --timeout 1000"],
+  ["aws:deploy", "cross-conf-env docker run --env-file ./.env silintl/ecs-deploy -c $npm_package_config_awsEcsCluster -n $npm_package_config_awsService -i $npm_package_config_imageRepo:latest -r $npm_package_config_awsRegion --timeout 1000"],
   ["aws:release", "run-s -cs aws:login docker:publish aws:deploy"],
 ]
 
@@ -38,7 +38,7 @@ function configureNpmScripts() {
 
   config.forEach(e => {
     if(!pkg.get(`config.${e[0]}`)) {
-      pkg.set(`config.${e[0]}`, e[1])
+      pkg.set(`config.${e[0]}`, e[1]).save()
     }
   })
 }
