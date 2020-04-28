@@ -1,6 +1,6 @@
 {
   "name": "mrm-task-npm-aws",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MRM task to configure your npm projects with scripts to accomplish blue-green deployments on AWS ECS",
   "main": "index.js",
   "scripts": {
