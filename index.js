@@ -26,6 +26,7 @@ const scripts = [
   ["aws:login", "run-p -cs aws:login:win aws:login:mac"],
   ["aws:deploy", "cross-conf-env docker run --env-file ./.env silintl/ecs-deploy -c $npm_package_config_awsEcsCluster -n $npm_package_config_awsService -i $npm_package_config_imageRepo:latest -r $npm_package_config_awsRegion --timeout 1000"],
   ["aws:release", "run-s -cs aws:login docker:publish aws:deploy"],
+  ["aws:publish:compose", "cross-conf-env ecs-cli compose --file docker-compose.aws.yml -p $npm_package_name -c $npm_package_config_awsEcsCluster -r $npm_package_config_awsRegion create"]
 ]
 
 
